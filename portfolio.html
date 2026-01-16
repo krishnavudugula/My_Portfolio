@@ -1,0 +1,229 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Krishna | Portfolio</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <nav class="container">
+            <div class="logo">&lt;KRISHNA/&gt;</div>
+            <div class="nav-links">
+                <a href="#about-me">About</a>
+                <a href="#projects">Works</a>
+                <a href="#blog">Writing</a>
+                <a href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </nav>
+
+        <section class="hero container" id="about">
+            <div class="hero-text">
+                <p style="color: var(--primary); font-weight: 600; margin-bottom: 10px;">Hi, I am</p>
+                <h1 style="font-weight: 100;">Krishna <br> Vudugula</h1>
+                <h2 style="color: var(--text-muted); font-size: 1.25rem; font-weight: 400; margin-bottom: 25px;"></h2>
+                <p style="max-width: 500px; color: var(--text-muted); margin-bottom: 35px;">
+                    I build things for the web. From complex backend logic in Python to stunning frontend interfaces. I'm focused on building accessible, human-centered products.
+                </p>
+                <a href="mailto:krishnavudugula2005@gmail.com" style="padding: 14px 32px; background: var(--primary-dim); border: 1px solid var(--primary); color: var(--primary); text-decoration: none; font-weight: 600; border-radius: 4px; transition: 0.3s;">Contact Me</a>
+            </div>
+            <div class="hero-img">
+                <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?q=80&w=1000&auto=format&fit=crop" alt="Krishna Profile">
+            </div>
+        </section>
+
+        <section class="container about-section" id="about-me">
+            <h2 class="section-title">About Me?</h2>
+            <div class="bio-container">
+                <div class="bio-content">
+                    <div class="bio-intro">
+                        <p class="bio-text">
+                            I'm a <strong>Computer Science student</strong> who loves turning ideas into working software. What started as curiosity about how websites work has evolved into building full-stack applications from designing clean interfaces to writing backend logic that actually solves problems.
+                        </p>
+                        <p class="bio-text">
+                            Currently exploring two paths that fascinate me: <strong>CyberSecurity and Web Development</strong>. I'm diving deep into Python, C & C++, Java and Linux systems while building web applications and learning about security principles. I'm all about learning by building. For me, code isn't just about making things work it's about making them work well and keeping them secure.
+                        </p>
+                    </div>
+
+                    <div class="expertise-grid">
+                        <div class="expertise-item">
+                            <div class="expertise-icon"><i class="fas fa-laptop-code"></i></div>
+                            <h4>Full-Stack Development</h4>
+                            <p>End-to-end web solutions with modern frameworks</p>
+                        </div>
+                        <div class="expertise-item">
+                            <div class="expertise-icon"><i class="fas fa-code-branch"></i></div>
+                            <h4>System Architecture</h4>
+                            <p>Linux systems and performance optimization</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="education-section">
+                    <h3 class="education-heading">Educational Background</h3>
+                    
+                    <div class="education-timeline">
+                        <div class="education-card">
+                            <div class="edu-header">
+                                <div class="edu-degree">B.Tech in Computer Science</div>
+                                <div class="edu-year">2024 - 2028</div>
+                            </div>
+                            <div class="edu-place">Balaji Institute of Technology and Science</div>
+                            <ul class="edu-highlights">
+                                <li>Specialization: Data Science & Algorithms</li>
+                                <li>Core Technologies: Python, C-Language, Java, Web Development</li>
+                                <li>Focus on practical problem-solving and software engineering principles</li>
+                            </ul>
+                        </div>
+
+                        <div class="education-card">
+                            <div class="edu-header">
+                                <div class="edu-degree">Higher Secondary Education</div>
+                                <div class="edu-year">2022 - 2024</div>
+                            </div>
+                            <div class="edu-place">SR Edu</div>
+                            <ul class="edu-highlights">
+                                <li>Strong foundation in Mathematics and Computer Science</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="container">
+            <h2 class="section-title">Skills & Certifications</h2>
+            
+            <div class="skills-container">
+                <div>
+                    <div class="skill-group">
+                        <h3>Technical Skills</h3>
+                        <ul class="skill-list">
+                            <li><i class="fab fa-html5"></i> HTML5, CSS3 & UI/UX Basics</li>
+                            <li><i class="fab fa-js"></i> JavaScript </li>
+                            <li><i class="fas fa-terminal"></i> C Programming</li>
+                            <li><i class="fab fa-python"></i> Python</li>
+                            <li><i class="fab fa-linux"></i> Linux System Administration</li>
+                            <li><i class="fab fa-java"></i> Java</li>
+                        </ul>
+                    </div>
+                    <div class="skill-group" style="margin-top: 40px;">
+                        <h3>Soft Skills</h3>
+                        <ul class="skill-list">
+                            <li><i class="fas fa-check"></i> Good Problem-Solving Mindset</li>
+                            <li><i class="fas fa-users"></i> Team Communication & Leadership</li>
+                            <li><i class="fas fa-clock"></i> Time Management</li>
+                            <li><i class="fas fa-brain"></i> Optimistic & Quick Learner</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="skill-group">
+                        <h3>Certifications</h3>
+                        <div class="cert-card">
+                            <div class="cert-title">FrontEnd Web Designing - freecodecamp</div>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Comprehensive course covering Frontend - HTML5, CSS3 & UI/UX Basics.</p>
+                            <a href="http://freecodecamp.org/certification/krishna__vudugula/responsive-web-design-v9" class="cert-btn" target="_blank">View Credential &rarr;</a>
+                        </div>
+                        <div class="cert-card">
+                            <div class="cert-title">The Complete JavaScript Course : From Zero to Expert!</div>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">In-depth JavaScript concepts, ES6+, DOM Manipulation, and more.</p>
+                            <a href="https://www.knowledgegate.ai/certificate/04DA4985" class="cert-btn" target="_blank">View Credential &rarr;</a>
+                        </div>
+                        <div class="cert-card">
+                            <div class="cert-title">CRT- C Programming</div>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">C programming concepts and problem-solving skills.</p>
+                            <a href="https://bitswgl.codetantra.com/cert/certificate.jsp?certId=CT1473-uuJQ7vd-cpv" class="cert-btn" target="_blank">View Credential &rarr;</a>
+                        </div>
+                        <div class="cert-card">
+                            <div class="cert-title">Machine Learning Statistical Foundations </div>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Professional Certificate by Wolfram Research.</p>
+                            <a href="https://lnkd.in/gnRWarQ7" class="cert-btn" target="_blank">View Credential &rarr;</a>
+                        </div>
+                        <div class="cert-card">
+                            <div class="cert-title">Introduction to Python</div> 
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Basic Python programming Fundamentals, concepts and applications.</p>
+                            <a href="https://courses.analyticsvidhya.com/certificates/msqe2qxj02" class="cert-btn" target="_blank">View Credential &rarr;</a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="container">
+            <h2 class="section-title">Selected Projects</h2>
+            <div class="grid-layout">
+                <div class="card-box">
+                    <div class="card-padding">
+                        <h3 class="card-title">Civic Issue Resolver</h3>
+                        <p style="font-size: 0.95rem; margin-bottom: 20px; color: var(--text-muted);">A crowdsourced platform for reporting civic issues to the govt. officials.</p>
+                        <a href="https://github.com/krishnavudugula/CivicResponse" target="_blank" style="font-size: 0.85rem; color: var(--primary); font-family: 'Space Grotesk'; margin-top: auto; text-decoration: none;">GitHub Repository</a>
+                        </div>
+                </div>
+                <div class="card-box">
+                    <div class="card-padding">
+                        <h3 class="card-title">Myntra Clone</h3>
+                        <p style="font-size: 0.95rem; margin-bottom: 20px; color: var(--text-muted);">Pixel-perfect frontend replica of the e-commerce giant.</p>
+                        <a href="https://github.com/krishnavudugula/Myntra-Functional-Clone" target="_blank" style="font-size: 0.85rem; color: var(--primary); font-family: 'Space Grotesk'; margin-top: auto; text-decoration: none;">GitHub Repository</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="container" style="margin-top: 80px; margin-bottom: 80px;">
+            <h2 class="section-title">Latest Writing</h2>
+            <div class="grid-layout">
+                <div class="card-box">
+                    <img src="pngs/AI-Face-Recognition-Employee-Attendance-System.webp" class="blog-img" alt="Blog 1">
+                    <div class="card-padding">
+                        <span class="blog-date">Nov 2025</span>
+                        <h3 class="card-title" style="font-size: 1.1rem;">How our Team Built a Face Scanning System</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Documenting the journey of building a biometric attendance system Software using Python.</p>
+                    </div>
+                </div>
+                <div class="card-box">
+                    <img src="pngs/a4b97569-fff9-4d06-848f-6e485cf201de.webp" class="blog-img" alt="Blog 2">
+                    <div class="card-padding">
+                        <span class="blog-date">Oct 2025</span>
+                        <h3 class="card-title" style="font-size: 1.1rem;">Understanding SIH 2025 Workflow</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">My experience working on the Crowdsourced Civic Issue Reporting system.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p style="color: var(--text-muted);">Designed & Built by Krishna.</p>
+        </footer>
+
+        <div class="social-bar">
+            <a href="https://github.com/krishnavudugula" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/krishna-vudugula-88a2b2342" class="social-icon" target="_blank"><i class="fab fa-linkedin" ></i></a>
+            <a href="mailto:krishnavudugula2005@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+        <script>
+            function toggleTheme() {
+                const body = document.body;
+                const icon = document.querySelector('.theme-toggle i');
+                
+                body.classList.toggle('light-mode');
+                
+                if (body.classList.contains('light-mode')) {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                } else {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                }
+            }
+        </script>
+    </body>
+    </html>
