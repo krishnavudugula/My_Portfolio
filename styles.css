@@ -98,13 +98,11 @@
             
             .hero-img img { 
                 width: 380px; 
-                border-radius: 12px; 
-                filter: grayscale(100%); 
+                border-radius: 12px;  
                 transition: 0.4s ease;
                 box-shadow: var(--shadow);
             }
             .hero-img img:hover { 
-                filter: grayscale(0); 
                 transform: translateY(-5px); 
             }
             .section-title { 
