@@ -8,6 +8,7 @@
                 --primary: #00ff41;      
                 --primary-dim: rgba(0, 255, 65, 0.1);
                 --secondary: #00d9ff;     
+                --project-img-height: clamp(200px, 25vw, 280px);
                 
                 --bg-body: #0a0a0a;       
                 --bg-card: #111111;       
@@ -360,7 +361,7 @@
                 display: inline-block;
             }
             .cert-btn:hover { text-decoration: underline; }
-            .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+            .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 30px; }
             
             .card-box { 
                 background: var(--bg-card); 
@@ -382,6 +383,70 @@
                 margin-bottom: 10px;
             }
 
+            .project-img {
+                width: 100%;
+                height: var(--project-img-height);
+                object-fit: cover;
+                border-bottom: 1px solid var(--border);
+                display: block;
+            }
+
+            .project-link {
+                color: var(--bg-body);
+                background: var(--primary);
+                padding: 10px 24px;
+                border-radius: 4px;
+                font-weight: 600;
+                font-size: 0.9rem;
+                font-family: 'Space Grotesk', sans-serif;
+                margin-top: auto;
+                text-decoration: none;
+                align-self: flex-end;
+                transition: 0.3s;
+            }
+            .project-link:hover { text-decoration: none; opacity: 0.9; transform: translateY(-2px); }
+
+            .project-actions {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: auto;
+                width: 100%;
+                gap: 10px;
+            }
+
+            .project-btn {
+                padding: 10px 16px; 
+                border-radius: 4px;
+                font-weight: 600;
+                font-size: 0.85rem;
+                font-family: 'Space Grotesk', sans-serif;
+                text-decoration: none;
+                transition: 0.3s;
+                text-align: center;
+                display: flex; align-items: center; gap: 8px;
+            }
+
+            .github-btn {
+                background: transparent;
+                border: 1px solid var(--border);
+                color: var(--text-muted);
+            }
+            .github-btn:hover {
+                border-color: var(--text-main);
+                color: var(--text-main);
+            }
+
+            .live-btn {
+                background: var(--primary);
+                color: var(--bg-body);
+                border: 1px solid var(--primary);
+            }
+            .live-btn:hover {
+                opacity: 0.9;
+                transform: translateY(-2px);
+            }
+
             .blog-img { width: 100%; height: 200px; object-fit: cover; }
             .blog-date { font-size: 0.8rem; color: var(--primary); margin-bottom: 8px; display: block; font-weight: 600; }
             footer { text-align: center; padding: 60px 0; border-top: 1px solid var(--border); margin-top: 60px; }
@@ -398,6 +463,7 @@
         .hero { flex-direction: column-reverse; text-align: center; }
         .hero h1 { font-size: 3rem; }
         .skills-container { grid-template-columns: 1fr; }
+        .project-img { height: clamp(160px, 48vw, 210px); }
         .social-bar { display: none; }
         .nav-links a { display: none; } 
         .nav-links { gap: 10px; }
