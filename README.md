@@ -23,6 +23,7 @@ A modern, responsive portfolio website showcasing my projects, skills, and journ
 ```
 My Portfolio/
 ├── portfolio.html    # Main HTML file
+├── certificates/    
 ├── styles.css        # Stylesheet with dark/light themes
 ├── pngs/            # Image assets
 └── README.md        # Project documentation
