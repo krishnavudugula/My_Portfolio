@@ -1,270 +1,744 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Krishna | Portfolio</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Vudugula — Portfolio</title>
+    <meta name="description" content="Krishna Vudugula — Computer Science student and full-stack developer. Explore projects, skills, certifications, and more.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-        <nav class="container">
-            <div class="logo">&lt;KRISHNA/&gt;</div>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo">&lt;KRISHNA/&gt;</a>
             <div class="nav-links">
-                <a href="#about-me">About</a>
-                <a href="#projects">Works</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#projects">Projects</a>
                 <a href="/resume/Krishna_Murari_Vudugula_Resume_.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-                <button class="theme-toggle" onclick="toggleTheme()">
-                    <i class="fas fa-sun"></i>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
-        </nav>
+        </div>
+    </nav>
 
-        <section class="hero container" id="about">
-            <div class="hero-text">
-                <p style="color: var(--primary); font-weight: 600; margin-bottom: 10px;">Hi, I am</p>
-                <h1 style="font-weight: 100;">Krishna <br> Vudugula</h1>
-                <h2 style="color: var(--text-muted); font-size: 1.25rem; font-weight: 400; margin-bottom: 25px;"></h2>
-                <p style="max-width: 500px; color: var(--text-muted); margin-bottom: 35px;">
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="#about" onclick="closeMobileNav()">About</a>
+        <a href="#skills" onclick="closeMobileNav()">Skills</a>
+        <a href="#certifications" onclick="closeMobileNav()">Certifications</a>
+        <a href="#projects" onclick="closeMobileNav()">Projects</a>
+        <a href="/resume/Krishna_Murari_Vudugula_Resume_.pdf" target="_blank" rel="noopener noreferrer" onclick="closeMobileNav()">Resume</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-greeting">Hi, I am</span>
+                <h1 class="hero-name">Krishna<br>Vudugula</h1>
+                <p class="hero-tagline" id="hero-tagline"><span class="cursor"></span></p>
+                <p class="hero-description">
                     I build things for the web. From complex backend logic in Python to stunning frontend interfaces. I'm focused on building accessible, human-centered products.
                 </p>
-                <a href="mailto:krishnavudugula2005@gmail.com" style="padding: 14px 32px; background: var(--primary-dim); border: 1px solid var(--primary); color: var(--primary); text-decoration: none; font-weight: 600; border-radius: 4px; transition: 0.3s;">Contact Me</a>
-            </div>
-            <div class="hero-img">
-                <img src="pngs/pfp pic.png" alt="Krishna Profile" style="height: 50%;">
-            </div>
-        </section>
-
-        <section class="container about-section" id="about-me">
-            <h2 class="section-title">About Me?</h2>
-            <div class="bio-container">
-                <div class="bio-content">
-                    <div class="bio-intro">
-                        <p class="bio-text">
-                            I'm a <strong>Computer Science student</strong> who loves turning ideas into working software. What started as curiosity about how websites work has evolved into building full-stack applications from designing clean interfaces to writing backend logic that actually solves problems.
-                        </p>
-                        <p class="bio-text">
-                            I'm focused on <strong>web development, problem-solving, and practical software engineering</strong>. I enjoy building projects that sharpen both my frontend and backend skills, whether that means creating responsive interfaces, designing efficient logic, or turning ideas into applications people can actually use. I learn best by building, improving, and understanding how every part of a product fits together.
-                        </p>
-                    </div>
-
-                    <div class="expertise-grid">
-                        <div class="expertise-item">
-                            <div class="expertise-icon"><i class="fas fa-laptop-code"></i></div>
-                            <h4>Full-Stack Development</h4>
-                            <p>Building responsive interfaces and backend features that work together smoothly</p>
-                        </div>
-                        <div class="expertise-item">
-                            <div class="expertise-icon"><i class="fas fa-code-branch"></i></div>
-                            <h4>Problem Solving</h4>
-                            <p>Data structures, algorithms, and logical thinking for real-world projects</p>
-                        </div>
-                    </div>
+                <div class="hero-cta">
+                    <a href="mailto:krishnavudugula2005@gmail.com" class="btn-primary">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                    <a href="/resume/Krishna_Murari_Vudugula_Resume_.pdf" target="_blank" rel="noopener noreferrer" class="btn-outline">
+                        <i class="fas fa-file-alt"></i> Resume
+                    </a>
                 </div>
-
-                <div class="education-section">
-                    <h3 class="education-heading">Educational Background</h3>
-                    
-                    <div class="education-timeline">
-                        <div class="education-card">
-                            <div class="edu-header">
-                                <div class="edu-degree">B.Tech in Computer Science</div>
-                                <div class="edu-year">2024 - 2028</div>
-                            </div>
-                            <div class="edu-place">Balaji Institute of Technology and Science</div>
-                            <ul class="edu-highlights">
-                                <li>Computer Science UG Student</li>
-                                <li>Specialization: Data Science</li>
-                                <li>Core Technologies: Python, C-Language, Java, Web Development</li>
-                                <li>Focus on practical problem-solving and software engineering principles</li>
-                            </ul>
-                        </div>
-
-                        <div class="education-card">
-                            <div class="edu-header">
-                                <div class="edu-degree">Higher Secondary Education</div>
-                                <div class="edu-year">2022 - 2024</div>
-                            </div>
-                            <div class="edu-place">SR Edu</div>
-                            <ul class="edu-highlights">
-                                <li>Strong foundation in PCM</li>
-                            </ul>
-                        </div>
+                <div class="hero-socials">
+                    <a href="https://github.com/krishnavudugula" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/krishna-vudugula-88a2b2342" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:krishnavudugula2005@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-wrapper">
+                    <img src="pngs/pfp pic.png" alt="Krishna Vudugula">
+                    <div class="hero-dots">
+                        <span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section id="skills" class="container">
-            <h2 class="section-title">Skills & Certifications</h2>
-            
-            <div class="skills-container">
-                <div>
-                    <div class="skill-group">
-                        <h3>Technical Skills</h3>
-                        <ul class="skill-list">
-                            <li><i class="fab fa-html5"></i> HTML5, CSS3 & UI/UX Basics</li>
-                            <li><i class="fab fa-js"></i> JavaScript</li>
-                            <li><i class="fas fa-code"></i> jQuery</li>
-                            <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
-                            <li><i class="fas fa-terminal"></i> C Programming</li>
-                            <li><i class="fab fa-python"></i> Python</li>
-                            <li><i class="fas fa-flask"></i> Flask & FastAPI</li>
-                            <li><i class="fab fa-linux"></i> Linux System Administration</li>
-                            <li><i class="fab fa-java"></i> Java</li>
-                            <li><i class="fas fa-database"></i> SQL</li>
-                            <li><i class="fas fa-sitemap"></i> DSA</li>
-                            <li><i class="fas fa-brain"></i> AI & ML</li>
-                            <li><i class="fab fa-git-alt"></i> Git</li>
-                        </ul>
-                    </div>
-                    <div class="skill-group" style="margin-top: 40px;">
-                        <h3>Soft Skills</h3>
-                        <ul class="skill-list">
-                            <li><i class="fas fa-lightbulb"></i> Analytical & Strategic Thinking</li>
-                            <li><i class="fas fa-users"></i> Collaborative Teamwork</li>
-                            <li><i class="fas fa-rocket"></i> Adaptability & Continuous Learning</li>
-                            <li><i class="fas fa-comments"></i> Effective Technical Communication</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="skill-group">
-                        <h3>Certifications</h3>
-                        <div class="cert-card">
-                            <div class="cert-title">Python - FullStack Virtual Internship</div>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Internship program providing hands-on experience in Python development and full-stack web development.</p>
-                            <a href="certificates/krishna-murari-vudugula-certificate.pdf" class="cert-btn" target="_blank" rel="noopener noreferrer">View Certificate PDF &rarr;</a>
-                        </div> 
-                        <div class="cert-card">
-                            <div class="cert-title">FrontEnd Web Designing - freecodecamp</div>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Comprehensive course covering Frontend - HTML5, CSS3 & UI/UX Basics.</p>
-                            <a href="http://freecodecamp.org/certification/krishna__vudugula/responsive-web-design-v9" class="cert-btn" target="_blank">View Credential &rarr;</a>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-title">CRT- C Programming</div>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">C programming concepts and problem-solving skills.</p>
-                            <a href="https://bitswgl.codetantra.com/cert/certificate.jsp?certId=CT1473-uuJQ7vd-cpv" class="cert-btn" target="_blank">View Credential &rarr;</a>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-title">Machine Learning Statistical Foundations </div>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Professional Certificate by Wolfram Research.</p>
-                            <a href="https://lnkd.in/gnRWarQ7" class="cert-btn" target="_blank">View Credential &rarr;</a>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-title">Artificial Intelligence Foundations: Machine Learning</div>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">certification course covering machine learning foundations and core artificial intelligence concepts.</p>
-                            <a href="certificates/ai-foundations-machine-learning-certificate.pdf" class="cert-btn" target="_blank" rel="noopener noreferrer">View Certificate PDF &rarr;</a>
-                        </div>
-                        <div class="cert-card">
-                            <div class="cert-title">CodSoft AI Internship</div>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Internship certificate recognizing hands-on work and learning in artificial intelligence through the CodSoft program.</p>
-                            <a href="certificates/codsoft-ai-internship-certificate.pdf" class="cert-btn" target="_blank" rel="noopener noreferrer">View Certificate PDF &rarr;</a>
-                       </div>
-                        <div class="cert-card">
-                            <div class="cert-title">Machine Learning & Data Science Internship</div>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Internship program providing hands-on experience in Machine Learning and Data Science.</p>
-                            <a href="certificates/ML&DS_Internship_Course_Certificate.pdf" class="cert-btn" target="_blank" rel="noopener noreferrer">View Certificate PDF &rarr;</a>
-                       </div>
-                        <div class="cert-card">
-                            <div class="cert-title">Code Unnati - Edunet Foundation</div>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Foundation Course and successfully completing the training on Python, Object Oriented Programming, Data Analytics, Database Management System, DataStructures & Algorithms and Competitive Coding during 2025-2026 under Code Unnati Program</p>
-                            <a href="certificates/CodeUnnati_Certificate.pdf" class="cert-btn" target="_blank" rel="noopener noreferrer">View Certificate PDF &rarr;</a>
-                       </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="projects" class="container">
-            <h2 class="section-title" >Selected Projects</h2>
-            <div class="grid-layout">
-                <div class="card-box">
-                    <img src="pngs/civic.png" alt="Civic Issue Resolver" class="project-img">
-                    <div class="card-padding">
-                        <h3 class="card-title">Civic Issue Resolver</h3>
-                        <p style="font-size: 0.95rem; margin-bottom: 20px; color: var(--text-muted);">A crowdsourced platform for reporting civic issues to the govt. officials.</p>
-                        <a href="https://github.com/krishnavudugula/CivicResponse" target="_blank" rel="noopener noreferrer" class="project-link">GitHub Repository</a>
-                        </div>
-                </div>
-                <div class="card-box">
-                    <img src="pngs/facerecog.png" alt="AI Face Recognition Employee Attendance System" class="project-img">
-                    <div class="card-padding">
-                        <h3 class="card-title">AI Face Recognition Employee Attendance System Mobile Application</h3>
-                        <p style="font-size: 0.95rem; margin-bottom: 20px; color: var(--text-muted);">An automated attendance system using AI face recognition technology.</p>
-                        <a href="https://github.com/krishnavudugula/face_recognition_attendance" target="_blank" rel="noopener noreferrer" class="project-link">GitHub Repository</a>
-                        </div>
-                </div>
-                <div class="card-box">
-                    <img src="pngs/fee_management.png" alt="Fee Management System" class="project-img">
-                    <div class="card-padding">
-                        <h3 class="card-title">Fee Management System</h3>
-                        <p style="font-size: 0.95rem; margin-bottom: 20px; color: var(--text-muted);">A comprehensive solution for managing and tracking student fees and payments.</p>
-                        <a href="https://github.com/krishnavudugula/Fee-Management-System" target="_blank" rel="noopener noreferrer" class="project-link">GitHub Repository</a>
-                    </div>
-                </div>
-                <div class="card-box">
-                    <img src="pngs/portfolio.png" alt="Portfolio Website" class="project-img">
-                    <div class="card-padding">
-                        <h3 class="card-title">Portfolio Website</h3>
-                        <p style="font-size: 0.95rem; margin-bottom: 20px; color: var(--text-muted);">A responsive portfolio website showcasing my projects and skills.</p>
-                        <div class="project-actions">
-                            <a href="https://github.com/krishnavudugula/My_Portfolio" target="_blank" rel="noopener noreferrer" class="project-btn github-btn"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="https://krishnavudugula.github.io/My_Portfolio/portfolio.html" class="project-btn live-btn">Live Demo <i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-box">
-                    <img src="pngs/TryYourPrime.png" alt="TryYourPrime" class="project-img">
-                    <div class="card-padding">
-                        <h3 class="card-title">TryYourPrime (TYP)</h3>
-                        <p style="font-size: 0.95rem; margin-bottom: 20px; color: var(--text-muted);">AI-powered conversational assessment tool that analyzes user habits and predicts future trajectory</p>
-                        <div class="project-actions">
-                            <a href="https://github.com/krishnavudugula/Try_Your_Prime" target="_blank" rel="noopener noreferrer" class="project-btn github-btn"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="https://try-your-prime.vercel.app" class="project-btn live-btn">Live Demo <i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-box">
-                    <img src="pngs/IntelliRoute.png" alt="IntelliRoute" class="project-img">
-                    <div class="card-padding">
-                        <h3 class="card-title">IntelliRoute - Smart Ride Booking</h3>
-                        <p style="font-size: 0.95rem; margin-bottom: 20px; color: var(--text-muted);">Smart ride-booking and driver-matching system with traffic insights, route visualization, and role-based dashboards.</p>
-                        <div class="project-actions">
-                            <a href="https://github.com/krishnavudugula/IntelliRoute-SmartRideBooking-" target="_blank" rel="noopener noreferrer" class="project-btn github-btn"><i class="fab fa-github"></i> GitHub</a>
-                            <a href="https://intelliroute-smart-ride-booking.onrender.com/" class="project-btn live-btn">Live Demo <i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <footer>
-            <p style="color: var(--text-muted);">Designed & Built by Krishna. 💖</p>
-        </footer>
-
-        <div class="social-bar">
-            <a href="https://github.com/krishnavudugula" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/krishna-vudugula-88a2b2342" class="social-icon" target="_blank"><i class="fab fa-linkedin" ></i></a>
-            <a href="mailto:krishnavudugula2005@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
         </div>
-        <script>
-            function toggleTheme() {
-                const body = document.body;
-                const icon = document.querySelector('.theme-toggle i');
-                
-                body.classList.toggle('light-mode');
-                
-                if (body.classList.contains('light-mode')) {
-                    icon.classList.remove('fa-sun');
-                    icon.classList.add('fa-moon');
-                } else {
-                    icon.classList.remove('fa-moon');
-                    icon.classList.add('fa-sun');
-                }
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">Get to know me</div>
+                <h2 class="section-title">About Me</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>
+                        I am a <strong>Computer Science undergraduate</strong> (B.Tech, 2024–2028) at the Balaji Institute of Technology and Science, specializing in Data Science. What began as a mere curiosity about the web has rapidly evolved into a comprehensive skill set spanning <strong>full-stack development, system architecture, and artificial intelligence</strong>.
+                    </p>
+                    <p>
+                        I am deeply focused on <strong>problem-solving and practical software engineering</strong>. Whether it's designing a clean, intuitive user interface or structuring complex database logic, my goal is always to deliver robust software that solves real-world problems. My academic foundation in C, Java, and Python is complemented by hands-on experience in modern frameworks like Flask and FastAPI.
+                    </p>
+                </div>
+
+                <div class="expertise-grid reveal stagger-children">
+                    <div class="expertise-card reveal" style="--i:0">
+                        <div class="icon"><i class="fas fa-laptop-code"></i></div>
+                        <h4>Full-Stack Development</h4>
+                        <p>End-to-end web apps — responsive frontends, REST APIs, database design, and deployment</p>
+                    </div>
+                    <div class="expertise-card reveal" style="--i:1">
+                        <div class="icon"><i class="fas fa-brain"></i></div>
+                        <h4>AI & Machine Learning</h4>
+                        <p>Computer vision, LLM integration, inference pipelines, and statistical modeling</p>
+                    </div>
+                    <div class="expertise-card reveal" style="--i:2">
+                        <div class="icon"><i class="fas fa-code-branch"></i></div>
+                        <h4>System Architecture</h4>
+                        <p>REST principles, OOP, system design, and client-server communication patterns</p>
+                    </div>
+                    <div class="expertise-card reveal" style="--i:3">
+                        <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h4>Mobile Development</h4>
+                        <p>Cross-platform apps with Capacitor, Kotlin, and Android background services</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="education-block reveal">
+                <div class="section-header">
+                    <div class="section-label">Background</div>
+                    <h2 class="section-title">Education</h2>
+                </div>
+
+                <div class="education-grid stagger-children">
+                    <div class="edu-card reveal" style="--i:0">
+                        <div class="edu-card-header">
+                            <div class="edu-degree">B.Tech in Computer Science</div>
+                            <span class="edu-year">2024 – 2028</span>
+                        </div>
+                        <div class="edu-institution">Balaji Institute of Technology and Science</div>
+                        <ul class="edu-details">
+                            <li>Computer Science UG Student</li>
+                            <li>Specialization: Data Science</li>
+                            <li>Core Technologies: Python, C-Language, Java, Web Development</li>
+                            <li>Focus on practical problem-solving and software engineering principles</li>
+                        </ul>
+                    </div>
+
+                    <div class="edu-card reveal" style="--i:1">
+                        <div class="edu-card-header">
+                            <div class="edu-degree">Higher Secondary Education</div>
+                            <span class="edu-year">2022 – 2024</span>
+                        </div>
+                        <div class="edu-institution">SR Edu</div>
+                        <ul class="edu-details">
+                            <li>Strong foundation in PCM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">What I Work With</div>
+                <h2 class="section-title">Skills & Technologies</h2>
+                <p class="section-subtitle">A snapshot of my technical toolkit — organized by domain.</p>
+            </div>
+
+            <div class="skills-grid reveal stagger-children">
+
+                <!-- Languages -->
+                <div class="skill-group-card reveal" style="--i:0">
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon"><i class="fas fa-code"></i></div>
+                        <h3 class="skill-group-title">Languages</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill"><i class="fab fa-python"></i> Python</span>
+                        <span class="skill-pill"><i class="fab fa-js"></i> JavaScript</span>
+                        <span class="skill-pill"><i class="fab fa-java"></i> Java</span>
+                        <span class="skill-pill"><i class="fas fa-terminal"></i> C</span>
+                    </div>
+                </div>
+
+                <!-- Backend -->
+                <div class="skill-group-card reveal" style="--i:1">
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon"><i class="fas fa-server"></i></div>
+                        <h3 class="skill-group-title">Backend</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill">FastAPI</span>
+                        <span class="skill-pill">Flask</span>
+                        <span class="skill-pill">REST APIs</span>
+                        <span class="skill-pill">JWT Auth</span>
+                        <span class="skill-pill">SQLAlchemy</span>
+                        <span class="skill-pill"><i class="fas fa-database"></i> SQLite</span>
+                        <span class="skill-pill"><i class="fas fa-database"></i> MySQL</span>
+                        <span class="skill-pill">CRUD Ops</span>
+                        <span class="skill-pill">DB Design</span>
+                        <span class="skill-pill">API Integration</span>
+                    </div>
+                </div>
+
+                <!-- AI / ML -->
+                <div class="skill-group-card reveal" style="--i:2">
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon"><i class="fas fa-brain"></i></div>
+                        <h3 class="skill-group-title">AI / ML</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Computer Vision</span>
+                        <span class="skill-pill">OpenCV</span>
+                        <span class="skill-pill">face_recognition</span>
+                        <span class="skill-pill">Inference Pipeline</span>
+                        <span class="skill-pill">Groq LLM API</span>
+                        <span class="skill-pill">Prompt Engineering</span>
+                        <span class="skill-pill">Feature Engineering</span>
+                        <span class="skill-pill">Scikit-learn</span>
+                        <span class="skill-pill">Statistical Modeling</span>
+                    </div>
+                </div>
+
+                <!-- Frontend -->
+                <div class="skill-group-card reveal" style="--i:3">
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon"><i class="fab fa-html5"></i></div>
+                        <h3 class="skill-group-title">Frontend</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill"><i class="fab fa-html5"></i> HTML5</span>
+                        <span class="skill-pill">CSS3</span>
+                        <span class="skill-pill"><i class="fab fa-js"></i> JavaScript</span>
+                        <span class="skill-pill"><i class="fab fa-bootstrap"></i> Bootstrap 5</span>
+                        <span class="skill-pill">jQuery</span>
+                        <span class="skill-pill">Responsive Design</span>
+                        <span class="skill-pill">Mobile-First</span>
+                        <span class="skill-pill">Dark/Light Theming</span>
+                    </div>
+                </div>
+
+                <!-- Mobile -->
+                <div class="skill-group-card reveal" style="--i:4">
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3 class="skill-group-title">Mobile</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Capacitor</span>
+                        <span class="skill-pill">Kotlin</span>
+                        <span class="skill-pill">Android Dev</span>
+                        <span class="skill-pill">Background Services</span>
+                    </div>
+                </div>
+
+                <!-- Deployment & Services -->
+                <div class="skill-group-card reveal" style="--i:5">
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                        <h3 class="skill-group-title">Deployment & Services</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Vercel</span>
+                        <span class="skill-pill">Render</span>
+                        <span class="skill-pill">GitHub Pages</span>
+                        <span class="skill-pill">OpenStreetMap API</span>
+                        <span class="skill-pill">Firebase FCM</span>
+                        <span class="skill-pill">Async Programming</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="skill-group-card reveal" style="--i:6">
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon"><i class="fas fa-tools"></i></div>
+                        <h3 class="skill-group-title">Tools</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="skill-pill"><i class="fab fa-github"></i> GitHub</span>
+                        <span class="skill-pill"><i class="fab fa-linux"></i> Linux CLI</span>
+                        <span class="skill-pill">VS Code</span>
+                    </div>
+                </div>
+
+                <!-- CS Core -->
+                <div class="skill-group-card reveal" style="--i:7">
+                    <div class="skill-group-header">
+                        <div class="skill-group-icon"><i class="fas fa-sitemap"></i></div>
+                        <h3 class="skill-group-title">CS Core</h3>
+                    </div>
+                    <div class="skill-pills">
+                        <span class="skill-pill">DSA</span>
+                        <span class="skill-pill">OOP</span>
+                        <span class="skill-pill">System Design</span>
+                        <span class="skill-pill">REST Principles</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Soft Skills -->
+            <div class="soft-skills-bar reveal">
+                <div class="skill-category-label">Soft Skills</div>
+                <div class="skill-pills">
+                    <span class="skill-pill soft"><i class="fas fa-lightbulb"></i> Analytical & Strategic Thinking</span>
+                    <span class="skill-pill soft"><i class="fas fa-users"></i> Collaborative Teamwork</span>
+                    <span class="skill-pill soft"><i class="fas fa-rocket"></i> Adaptability & Continuous Learning</span>
+                    <span class="skill-pill soft"><i class="fas fa-comments"></i> Effective Technical Communication</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="section" id="certifications">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">Credentials</div>
+                <h2 class="section-title">Certifications</h2>
+                <p class="section-subtitle">Professional certificates and completed programs that validate my learning journey.</p>
+            </div>
+
+            <div class="cert-carousel-wrapper reveal" id="cert-carousel">
+                <div class="cert-carousel-track" id="cert-track">
+                    <!-- Pages are built dynamically by JS -->
+                </div>
+
+                <div class="cert-controls">
+                    <button class="cert-arrow" id="cert-prev" aria-label="Previous certifications">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="cert-dots" id="cert-dots"></div>
+                    <button class="cert-arrow" id="cert-next" aria-label="Next certifications">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-label">My Work</div>
+                <h2 class="section-title">Selected Projects</h2>
+            </div>
+
+            <div class="projects-grid stagger-children">
+                <!-- Project 1: Civic Issue Resolver -->
+                <div class="project-card reveal" style="--i:0">
+                    <div class="project-card-image">
+                        <img src="pngs/civic.png" alt="Civic Issue Resolver">
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Civic Issue Resolver</h3>
+                        <p class="project-card-desc">A crowdsourced platform for reporting civic issues to the govt. officials.</p>
+                        <div class="project-card-actions">
+                            <a href="https://github.com/krishnavudugula/CivicResponse" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-github">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: AI Face Recognition -->
+                <div class="project-card reveal" style="--i:1">
+                    <div class="project-card-image">
+                        <img src="pngs/facerecog.png" alt="AI Face Recognition Employee Attendance System">
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">AI Face Recognition Attendance System</h3>
+                        <p class="project-card-desc">An automated attendance system using AI face recognition technology.</p>
+                        <div class="project-card-actions">
+                            <a href="https://github.com/krishnavudugula/face_recognition_attendance" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-github">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Fee Management System -->
+                <div class="project-card reveal" style="--i:2">
+                    <div class="project-card-image">
+                        <img src="pngs/fee_management.png" alt="Fee Management System">
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Fee Management System</h3>
+                        <p class="project-card-desc">A comprehensive solution for managing and tracking student fees and payments.</p>
+                        <div class="project-card-actions">
+                            <a href="https://github.com/krishnavudugula/Fee-Management-System" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-github">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Portfolio Website -->
+                <div class="project-card reveal" style="--i:3">
+                    <div class="project-card-image">
+                        <img src="pngs/portfolio.png" alt="Portfolio Website">
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">Portfolio Website</h3>
+                        <p class="project-card-desc">A responsive portfolio website showcasing my projects and skills.</p>
+                        <div class="project-card-actions">
+                            <a href="https://github.com/krishnavudugula/My_Portfolio" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-github">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="https://krishnavudugula.github.io/My_Portfolio/portfolio.html" class="project-btn project-btn-live">
+                                Live Demo <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: TryYourPrime -->
+                <div class="project-card reveal" style="--i:4">
+                    <div class="project-card-image">
+                        <img src="pngs/TryYourPrime.png" alt="TryYourPrime">
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">TryYourPrime (TYP)</h3>
+                        <p class="project-card-desc">AI-powered conversational assessment tool that analyzes user habits and predicts future trajectory.</p>
+                        <div class="project-card-actions">
+                            <a href="https://github.com/krishnavudugula/Try_Your_Prime" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-github">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="https://try-your-prime.vercel.app" class="project-btn project-btn-live">
+                                Live Demo <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: IntelliRoute -->
+                <div class="project-card reveal" style="--i:5">
+                    <div class="project-card-image">
+                        <img src="pngs/IntelliRoute.png" alt="IntelliRoute">
+                    </div>
+                    <div class="project-card-body">
+                        <h3 class="project-card-title">IntelliRoute — Smart Ride Booking</h3>
+                        <p class="project-card-desc">Smart ride-booking and driver-matching system with traffic insights, route visualization, and role-based dashboards.</p>
+                        <div class="project-card-actions">
+                            <a href="https://github.com/krishnavudugula/IntelliRoute-SmartRideBooking-" target="_blank" rel="noopener noreferrer" class="project-btn project-btn-github">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="https://intelliroute-smart-ride-booking.onrender.com/" class="project-btn project-btn-live">
+                                Live Demo <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-socials">
+                    <a href="https://github.com/krishnavudugula" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/krishna-vudugula-88a2b2342" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:krishnavudugula2005@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p class="footer-credit">Designed & Built by Krishna. 💖</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    /* ==================================================================
+       CERTIFICATIONS DATA
+       All cert data in one place — carousel renders from this array.
+       Add new certs here and the carousel auto-adjusts.
+    ================================================================== */
+    const certifications = [
+        {
+            title: "Python - FullStack Virtual Internship",
+            desc: "Internship program providing hands-on experience in Python development and full-stack web development.",
+            link: "certificates/krishna-murari-vudugula-certificate.pdf",
+            linkText: "View Certificate PDF",
+            external: false
+        },
+        {
+            title: "FrontEnd Web Designing — freeCodeCamp",
+            desc: "Comprehensive course covering Frontend — HTML5, CSS3 & UI/UX Basics.",
+            link: "http://freecodecamp.org/certification/krishna__vudugula/responsive-web-design-v9",
+            linkText: "View Credential",
+            external: true
+        },
+        {
+            title: "CRT — C Programming",
+            desc: "C programming concepts and problem-solving skills.",
+            link: "https://bitswgl.codetantra.com/cert/certificate.jsp?certId=CT1473-uuJQ7vd-cpv",
+            linkText: "View Credential",
+            external: true
+        },
+        {
+            title: "Machine Learning Statistical Foundations",
+            desc: "Professional Certificate by Wolfram Research.",
+            link: "https://lnkd.in/gnRWarQ7",
+            linkText: "View Credential",
+            external: true
+        },
+        {
+            title: "AI Foundations: Machine Learning",
+            desc: "Certification course covering machine learning foundations and core artificial intelligence concepts.",
+            link: "certificates/ai-foundations-machine-learning-certificate.pdf",
+            linkText: "View Certificate PDF",
+            external: false
+        },
+        {
+            title: "CodSoft AI Internship",
+            desc: "Internship certificate recognizing hands-on work and learning in artificial intelligence through the CodSoft program.",
+            link: "certificates/codsoft-ai-internship-certificate.pdf",
+            linkText: "View Certificate PDF",
+            external: false
+        },
+        {
+            title: "Machine Learning & Data Science Internship",
+            desc: "Internship program providing hands-on experience in Machine Learning and Data Science.",
+            link: "certificates/ML&DS_Internship_Course_Certificate.pdf",
+            linkText: "View Certificate PDF",
+            external: false
+        },
+        {
+            title: "Code Unnati — Edunet Foundation",
+            desc: "Training on Python, OOP, Data Analytics, DBMS, DSA and Competitive Coding under Code Unnati Program 2025-2026.",
+            link: "certificates/CodeUnnati_Certificate.pdf",
+            linkText: "View Certificate PDF",
+            external: false
+        }
+    ];
+
+    /* ==================================================================
+       CERTIFICATION CAROUSEL
+    ================================================================== */
+    function getCardsPerPage() {
+        if (window.innerWidth <= 640) return 1;
+        if (window.innerWidth <= 968) return 2;
+        return 3;
+    }
+
+    let currentPage = 0;
+    let totalPages = 0;
+
+    function buildCarousel() {
+        const track = document.getElementById('cert-track');
+        const dotsContainer = document.getElementById('cert-dots');
+        const perPage = getCardsPerPage();
+        totalPages = Math.ceil(certifications.length / perPage);
+        currentPage = Math.min(currentPage, totalPages - 1);
+
+        track.innerHTML = '';
+        dotsContainer.innerHTML = '';
+
+        for (let p = 0; p < totalPages; p++) {
+            const page = document.createElement('div');
+            page.className = 'cert-carousel-page';
+
+            const start = p * perPage;
+            const end = Math.min(start + perPage, certifications.length);
+
+            for (let i = start; i < end; i++) {
+                const cert = certifications[i];
+                page.innerHTML += `
+                    <div class="cert-card">
+                        <div class="cert-card-icon"><i class="fas fa-award"></i></div>
+                        <div class="cert-card-title">${cert.title}</div>
+                        <div class="cert-card-desc">${cert.desc}</div>
+                        <a href="${cert.link}" class="cert-card-link" target="_blank" ${cert.external ? '' : 'rel="noopener noreferrer"'}>${cert.linkText}</a>
+                    </div>
+                `;
             }
-        </script>
-    </body>
-    </html>
+            track.appendChild(page);
+
+            const dot = document.createElement('button');
+            dot.className = 'cert-dot' + (p === currentPage ? ' active' : '');
+            dot.setAttribute('aria-label', `Go to page ${p + 1}`);
+            dot.addEventListener('click', () => goToPage(p));
+            dotsContainer.appendChild(dot);
+        }
+
+        updateCarousel();
+    }
+
+    function goToPage(page) {
+        currentPage = page;
+        updateCarousel();
+    }
+
+    function updateCarousel() {
+        const track = document.getElementById('cert-track');
+        track.style.transform = `translateX(-${currentPage * 100}%)`;
+
+        document.querySelectorAll('.cert-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentPage);
+        });
+
+        document.getElementById('cert-prev').disabled = currentPage === 0;
+        document.getElementById('cert-next').disabled = currentPage === totalPages - 1;
+    }
+
+    document.getElementById('cert-prev').addEventListener('click', () => {
+        if (currentPage > 0) goToPage(currentPage - 1);
+    });
+    document.getElementById('cert-next').addEventListener('click', () => {
+        if (currentPage < totalPages - 1) goToPage(currentPage + 1);
+    });
+
+    // Rebuild on resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(buildCarousel, 200);
+    });
+
+    buildCarousel();
+
+    /* ==================================================================
+       THEME TOGGLE
+    ================================================================== */
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
+
+    // Check saved preference
+    if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        const isDark = document.body.classList.contains('dark-mode');
+        themeIcon.classList.replace(isDark ? 'fa-moon' : 'fa-sun', isDark ? 'fa-sun' : 'fa-moon');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
+    /* ==================================================================
+       MOBILE HAMBURGER MENU
+    ================================================================== */
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileNav.classList.toggle('open');
+        document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+    });
+
+    function closeMobileNav() {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    /* ==================================================================
+       SCROLL PROGRESS BAR
+    ================================================================== */
+    const progressBar = document.getElementById('scroll-progress');
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = progress + '%';
+    });
+
+    /* ==================================================================
+       NAVBAR SCROLL EFFECT
+    ================================================================== */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    /* ==================================================================
+       SCROLL REVEAL ANIMATIONS
+    ================================================================== */
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ==================================================================
+       HERO TYPING ANIMATION
+    ================================================================== */
+    const taglines = [
+        "Full-Stack Developer",
+        "Problem Solver",
+        "CS(DS) Student",
+        "Software Engineer"
+    ];
+
+    const taglineEl = document.getElementById('hero-tagline');
+    let taglineIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 90;
+
+    function typeEffect() {
+        const current = taglines[taglineIndex];
+        const displayed = current.substring(0, charIndex);
+        taglineEl.innerHTML = displayed + '<span class="cursor"></span>';
+
+        if (!isDeleting && charIndex < current.length) {
+            charIndex++;
+            typingSpeed = 80 + Math.random() * 50;
+        } else if (!isDeleting && charIndex === current.length) {
+            isDeleting = true;
+            typingSpeed = 1800; // pause at end
+        } else if (isDeleting && charIndex > 0) {
+            charIndex--;
+            typingSpeed = 40;
+        } else {
+            isDeleting = false;
+            taglineIndex = (taglineIndex + 1) % taglines.length;
+            typingSpeed = 400; // pause before next word
+        }
+
+        setTimeout(typeEffect, typingSpeed);
+    }
+
+    typeEffect();
+    </script>
+</body>
+</html>
