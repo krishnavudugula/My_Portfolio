@@ -483,7 +483,6 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-image-wrapper::after {
-    content: '';
     position: absolute;
     bottom: -20px;
     left: -20px;
