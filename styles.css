@@ -1210,7 +1210,7 @@ img { max-width: 100%; display: block; }
     .hero-image-wrapper::before { display: none; }
     .hero-image-wrapper::after { display: none; }
     .hero-dots { display: none; }
-
+    
     .hero-cta {
         flex-direction: column;
         width: 100%;
