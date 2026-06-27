@@ -22,6 +22,7 @@
                 <a href="#skills">Skills</a>
                 <a href="#certifications">Certifications</a>
                 <a href="#projects">Projects</a>
+                <a href="#" onclick="openContactModal(); return false;" class="nav-contact-btn">Contact</a>
             </div>
             <div class="nav-actions">
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
@@ -42,6 +43,7 @@
         <a href="#skills" onclick="closeMobileNav()">Skills</a>
         <a href="#certifications" onclick="closeMobileNav()">Certifications</a>
         <a href="#projects" onclick="closeMobileNav()">Projects</a>
+        <a href="#" onclick="closeMobileNav(); openContactModal(); return false;">Contact</a>
     </div>
 
     <!-- Hero Section -->
@@ -55,10 +57,10 @@
                     I build things for the web. From complex backend logic in Python to stunning frontend interfaces. I'm focused on building accessible, human-centered products.
                 </p>
                 <div class="hero-cta">
-                    <a href="mailto:krishnavudugula2005@gmail.com" class="btn-primary">
+                    <button onclick="openContactModal()" class="btn-primary">
                         <i class="fas fa-envelope"></i> Contact Me
-                    </a>
-                    <a href="/resume/Krishna_Resume_2026.pdf" rel="noopener noreferrer" class="btn-outline" download class="btn outline">
+                    </button>
+                    <a href="/resume/Krishna_Resume_2026.pdf" rel="noopener noreferrer" class="btn-outline" download>
                         <i class="fas fa-file-alt"></i> Download Resume
                     </a>
                 </div>
@@ -449,29 +451,80 @@
         </div>
     </section>
 
+    <!-- Contact Modal -->
+    <div class="contact-modal-overlay" id="contact-modal">
+        <div class="contact-modal">
+            <button class="contact-modal-close" onclick="closeContactModal()" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="contact-modal-header">
+                <div class="contact-modal-icon">
+                    <i class="fas fa-paper-plane"></i>
+                </div>
+                <h3 class="contact-modal-title">Get In Touch</h3>
+                <p class="contact-modal-subtitle">Choose your preferred way to connect</p>
+            </div>
+            <div class="contact-modal-links">
+                <a href="mailto:krishnavudugula2005@gmail.com" class="contact-link contact-link-email">
+                    <div class="contact-link-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-link-info">
+                        <span class="contact-link-label">Email</span>
+                        <span class="contact-link-value">krishnavudugula2005@gmail.com</span>
+                    </div>
+                    <i class="fas fa-arrow-right contact-link-arrow"></i>
+                </a>
+                <a href="https://linkedin.com/in/krishna-vudugula-88a2b2342" target="_blank" class="contact-link contact-link-linkedin">
+                    <div class="contact-link-icon"><i class="fab fa-linkedin-in"></i></div>
+                    <div class="contact-link-info">
+                        <span class="contact-link-label">LinkedIn</span>
+                        <span class="contact-link-value">krishna-vudugula</span>
+                    </div>
+                    <i class="fas fa-arrow-right contact-link-arrow"></i>
+                </a>
+                <a href="https://instagram.com/krishna__vudugula" target="_blank" class="contact-link contact-link-instagram">
+                    <div class="contact-link-icon"><i class="fab fa-instagram"></i></div>
+                    <div class="contact-link-info">
+                        <span class="contact-link-label">Instagram</span>
+                        <span class="contact-link-value">@krishna_vudugula</span>
+                    </div>
+                    <i class="fas fa-arrow-right contact-link-arrow"></i>
+                </a>
+                <a href="https://github.com/krishnavudugula" target="_blank" class="contact-link contact-link-github">
+                    <div class="contact-link-icon"><i class="fab fa-github"></i></div>
+                    <div class="contact-link-info">
+                        <span class="contact-link-label">GitHub</span>
+                        <span class="contact-link-value">krishnavudugula</span>
+                    </div>
+                    <i class="fas fa-arrow-right contact-link-arrow"></i>
+                </a>
+                <a href="/resume/Krishna_Resume_2026.pdf" download class="contact-link contact-link-resume">
+                    <div class="contact-link-icon"><i class="fas fa-file-alt"></i></div>
+                    <div class="contact-link-info">
+                        <span class="contact-link-label">Resume</span>
+                        <span class="contact-link-value">Download PDF</span>
+                    </div>
+                    <i class="fas fa-arrow-right contact-link-arrow"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-socials">
-                    <a href="https://github.com/krishnavudugula" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/krishna-vudugula-88a2b2342" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:krishnavudugula2005@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                </div>
-                <p class="footer-credit">Designed & Built by Krishna. 💖</p>
+                <p class="footer-credit">Designed &amp; Built by Krishna. 💖</p>
             </div>
         </div>
     </footer>
     <div class="social-bar">
             <a href="https://github.com/krishnavudugula" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/krishna-vudugula-88a2b2342" class="social-icon" target="_blank"><i class="fab fa-linkedin" ></i></a>
+            <a href="https://linkedin.com/in/krishna-vudugula-88a2b2342" class="social-icon" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="mailto:krishnavudugula2005@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
         </div>
 
     <script>
     /* ==================================================================
-       CERTIFICATIONS DATA
-       All cert data in one place 
     ================================================================== */
     const certifications = [
         {
@@ -730,6 +783,38 @@
     }
 
     typeEffect();
+
+    /* ==================================================================
+       CONTACT MODAL
+    ================================================================== */
+    function openContactModal() {
+        const modal = document.getElementById('contact-modal');
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        // Stagger animate the links
+        const links = modal.querySelectorAll('.contact-link');
+        links.forEach((link, i) => {
+            link.style.transitionDelay = (i * 60 + 100) + 'ms';
+        });
+    }
+
+    function closeContactModal() {
+        const modal = document.getElementById('contact-modal');
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+        const links = modal.querySelectorAll('.contact-link');
+        links.forEach(link => { link.style.transitionDelay = '0ms'; });
+    }
+
+    // Close on overlay click
+    document.getElementById('contact-modal').addEventListener('click', (e) => {
+        if (e.target === e.currentTarget) closeContactModal();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeContactModal();
+    });
     </script>
 </body>
 </html>
