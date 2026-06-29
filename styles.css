@@ -1084,7 +1084,7 @@ img { max-width: 100%; display: block; }
    NAV CONTACT BUTTON
    ======================================================================== */
 .nav-contact-btn {
-    background: var(--primary) !important;
+    background: #0072ff !important;
     color: #FFFFFF !important;
     border-radius: var(--radius-sm) !important;
     padding: 8px 20px !important;
