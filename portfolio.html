@@ -342,9 +342,22 @@
                 <h2 class="section-title">Selected Projects</h2>
             </div>
 
+            <div class="project-filter-bar reveal" aria-label="Filter projects by category">
+                <div class="project-filter-intro">
+                    <span class="project-filter-mark"></span>
+                    <span id="project-filter-status">Showing all projects</span>
+                </div>
+                <div class="project-filters" role="group" aria-label="Project categories">
+                    <button class="project-filter active" type="button" data-filter="all" aria-pressed="true">All</button>
+                    <button class="project-filter" type="button" data-filter="static" aria-pressed="false">Static Web</button>
+                    <button class="project-filter" type="button" data-filter="ai" aria-pressed="false">AI / ML</button>
+                    <button class="project-filter" type="button" data-filter="tools" aria-pressed="false">Tools &amp; Games</button>
+                </div>
+            </div>
+
             <div class="projects-grid stagger-children">
                 <!-- Project 1: Civic Issue Resolver -->
-                <div class="project-card reveal" style="--i:0">
+                <div class="project-card reveal" data-category="static" style="--i:0">
                     <div class="project-card-image">
                         <img src="pngs/civic.png" alt="Civic Issue Resolver">
                     </div>
@@ -360,7 +373,7 @@
                 </div>
 
                 <!-- Project 2: AI Face Recognition -->
-                <div class="project-card reveal" style="--i:1">
+                <div class="project-card reveal" data-category="ai" style="--i:1">
                     <div class="project-card-image">
                         <img src="pngs/facerecog.png" alt="AI Face Recognition Employee Attendance System">
                     </div>
@@ -376,7 +389,7 @@
                 </div>
 
                 <!-- Project 3: Fee Management System -->
-                <div class="project-card reveal" style="--i:2">
+                <div class="project-card reveal" data-category="ai" style="--i:2">
                     <div class="project-card-image">
                         <img src="pngs/fee_management.png" alt="Fee Management System">
                     </div>
@@ -392,7 +405,7 @@
                 </div>
 
                 <!-- Project 4: Portfolio Website -->
-                <div class="project-card reveal" style="--i:3">
+                <div class="project-card reveal" data-category="static" style="--i:3">
                     <div class="project-card-image">
                         <img src="pngs/portfolio.png" alt="Portfolio Website">
                     </div>
@@ -411,7 +424,7 @@
                 </div>
 
                 <!-- Project 5: TryYourPrime -->
-                <div class="project-card reveal" style="--i:4">
+                <div class="project-card reveal" data-category="ai" style="--i:4">
                     <div class="project-card-image">
                         <img src="pngs/TryYourPrime.png" alt="TryYourPrime">
                     </div>
@@ -430,7 +443,7 @@
                 </div>
 
                 <!-- Project 6: IntelliRoute -->
-                <div class="project-card reveal" style="--i:5">
+                <div class="project-card reveal" data-category="ai" style="--i:5">
                     <div class="project-card-image">
                         <img src="pngs/IntelliRoute.png" alt="IntelliRoute">
                     </div>
@@ -448,7 +461,7 @@
                     </div>
                 </div>
 
-                <div class="project-card reveal" style="--i:5">
+                <div class="project-card reveal" data-category="tools" style="--i:5">
                     <div class="project-card-image">
                         <img src="pngs/chess_analyser.jpg" alt="Free Chess Analyser">
                     </div>
@@ -464,7 +477,7 @@
                 </div>
 
                 
-                <div class="project-card reveal" style="--i:5">
+                <div class="project-card reveal" data-category="static" style="--i:5">
                     <div class="project-card-image">
                         <img src="pngs/TatTvam.png" alt="TatTvam">
                     </div>
@@ -482,7 +495,7 @@
                     </div>
                 </div>
 
-                <div class="project-card reveal" style="--i:5">
+                <div class="project-card reveal" data-category="tools" style="--i:5">
                     <div class="project-card-image">
                         <img src="pngs/Mindcraft.png" alt="MindCraft">
                     </div>
@@ -500,7 +513,7 @@
                     </div>
                 </div>
 
-                <div class="project-card reveal" style="--i:5">
+                <div class="project-card reveal" data-category="tools" style="--i:5">
                     <div class="project-card-image">
                         <img src="pngs/Typora.png" alt="Typora">
                     </div>
@@ -880,6 +893,38 @@
     });
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    /* ==================================================================
+       PROJECT FILTERS
+    ================================================================== */
+    const projectCards = document.querySelectorAll('.project-card');
+    const projectFilters = document.querySelectorAll('.project-filter');
+    const projectFilterStatus = document.getElementById('project-filter-status');
+
+    projectFilters.forEach(filterButton => {
+        filterButton.addEventListener('click', () => {
+            const selectedFilter = filterButton.dataset.filter;
+            let visibleProjects = 0;
+
+            projectFilters.forEach(button => {
+                const isActive = button === filterButton;
+                button.classList.toggle('active', isActive);
+                button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+            });
+
+            projectCards.forEach(card => {
+                const shouldShow = selectedFilter === 'all' || card.dataset.category === selectedFilter;
+                card.classList.toggle('is-hidden', !shouldShow);
+                card.classList.toggle('is-filtered-in', shouldShow);
+                if (shouldShow) visibleProjects++;
+            });
+
+            const filterLabel = filterButton.textContent.trim();
+            projectFilterStatus.textContent = selectedFilter === 'all'
+                ? 'Showing all projects'
+                : `${visibleProjects} ${filterLabel} project${visibleProjects === 1 ? '' : 's'}`;
+        });
+    });
 
     /* ==================================================================
        HERO TYPING ANIMATION

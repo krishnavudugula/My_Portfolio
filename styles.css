@@ -986,6 +986,61 @@ img { max-width: 100%; display: block; }
 /* ========================================================================
    PROJECTS SECTION
    ======================================================================== */
+.project-filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin: -8px 0 28px;
+    padding: 12px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.project-filter-intro {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+.project-filter-mark {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.project-filter {
+    padding: 7px 13px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: var(--text-secondary);
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.project-filter:hover,
+.project-filter.active {
+    border-color: var(--primary);
+    background: var(--primary-soft);
+    color: var(--text);
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1000,6 +1055,17 @@ img { max-width: 100%; display: block; }
     display: flex;
     flex-direction: column;
     transition: all var(--transition-base);
+}
+.project-card.is-hidden {
+    display: none;
+}
+.project-card.is-filtered-in {
+    animation: project-card-in 0.35s ease both;
+}
+
+@keyframes project-card-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 .project-card:hover {
     border-color: var(--border-hover);
@@ -1446,6 +1512,15 @@ body.dark-mode .contact-link-github:hover { border-color: #9CA3AF; }
 
     .cert-carousel-page {
         grid-template-columns: 1fr;
+    }
+
+    .project-filter-bar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .project-filters {
+        justify-content: flex-start;
     }
 
     .project-card-image { height: 180px; }
