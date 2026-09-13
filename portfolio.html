@@ -724,6 +724,74 @@
         document.getElementById('cert-next').disabled = currentPage === totalPages - 1;
     }
 
+    let dragStartX = 0;
+    let dragDistance = 0;
+    let isDragging = false;
+    let dragMoved = false;
+
+    const certTrack = document.getElementById('cert-track');
+
+    certTrack.addEventListener('pointerdown', (event) => {
+        if (event.button !== 0) return;
+
+        dragStartX = event.clientX;
+        dragDistance = 0;
+        dragMoved = false;
+        isDragging = true;
+        certTrack.classList.add('is-dragging');
+        certTrack.setPointerCapture(event.pointerId);
+    });
+
+    certTrack.addEventListener('pointermove', (event) => {
+        if (!isDragging) return;
+
+        dragDistance = event.clientX - dragStartX;
+        if (Math.abs(dragDistance) > 6) dragMoved = true;
+        certTrack.style.transform = `translateX(calc(-${currentPage * 100}% + ${dragDistance}px))`;
+    });
+
+    function finishCertDrag() {
+        if (!isDragging) return;
+
+        isDragging = false;
+        certTrack.classList.remove('is-dragging');
+
+        if (Math.abs(dragDistance) > 50) {
+            const direction = dragDistance < 0 ? 1 : -1;
+            const nextPage = currentPage + direction;
+            if (nextPage >= 0 && nextPage < totalPages) {
+                goToPage(nextPage);
+                return;
+            }
+        }
+
+        updateCarousel();
+    }
+
+    certTrack.addEventListener('pointerup', finishCertDrag);
+    certTrack.addEventListener('pointercancel', finishCertDrag);
+    certTrack.addEventListener('click', (event) => {
+        if (!dragMoved) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+        dragMoved = false;
+    });
+
+    document.getElementById('cert-carousel').addEventListener('wheel', (event) => {
+        const wheelDistance = Math.abs(event.deltaX) > Math.abs(event.deltaY)
+            ? event.deltaX
+            : event.deltaY;
+        if (Math.abs(wheelDistance) < 10) return;
+
+        const direction = wheelDistance > 0 ? 1 : -1;
+        const nextPage = currentPage + direction;
+        if (nextPage < 0 || nextPage >= totalPages) return;
+
+        event.preventDefault();
+        goToPage(nextPage);
+    }, { passive: false });
+
     document.getElementById('cert-prev').addEventListener('click', () => {
         if (currentPage > 0) goToPage(currentPage - 1);
     });
